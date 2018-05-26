@@ -3,6 +3,7 @@ import sys
 with open(sys.argv[1], "r") as f:
     counts = {}
     string = f.readline()
+    string = string.strip('\n')
     words = string.split(" ")
     for w in words:
         if w not in counts:
