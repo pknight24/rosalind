@@ -1,3 +1,4 @@
+chmod +x $1
 mv ~/Downloads/rosalind* ./problem
-python $1 problem > out
+$1 problem > out
 rm problem
