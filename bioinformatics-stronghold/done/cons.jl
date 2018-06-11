@@ -2,11 +2,16 @@
 
 open(ARGS[1]) do f
   text = split(readstring(f), ">")[2:end]
-  profile = ["A:", "C:", "T:", "G:"]
+  profile = ["A:", "C:", "G:", "T:"]
 
   strings = []
   for t in text
-    append!(strings, split(t)[2:end])
+    this_string = split(t)[2:end]
+    full_dna = ""
+    for i in this_string
+      full_dna *= i
+    end
+    push!(strings, full_dna)
   end
   len = length(strings[1]) # all dna strings have the same length
   for i in 1:len
